@@ -1,0 +1,48 @@
+ <html>
+ <body>
+ <h1 style="color:green;">-
+ Hola Gio, esta es mi primera pagina web con planilla en Django
+ </h1>
+
+{# EJEMPLO DISEÑADOR IGNORAR ESTA PARTE #} 
+
+{% comment %}
+EJEMPLO DISEÑADOR IGNORAR ESTA PARTE
+MAS DE UNA LINEA
+{% endcomment %}
+
+{% if nombre_persona == 'Dianella' %}
+    <p>El curso lo imparte la profesora titular</p>
+    {%else%}
+    <p>El curso lo imparte la profesora suplente</p>
+{%endif%}
+
+ <p>Mi nombre es: {{nombre_persona|lower}} {{apellido_persona.upper}} {{fecha_ahora}} </p>
+ <p>La fecha y hora es = {{fecha}} </p>
+ <p>El dia es = {{fecha.day}} </p>
+ <p>El mes es = {{fecha.month}} </p>
+ <p>El agno es = {{fecha.year}} </p>
+ <p>La lista es {{temas}}</p>
+ <p>La lista es {{temas.0}}</p>
+ <p>La lista es {{temas.1}}</p>
+ <p>La lista es {{temas.2}}</p>
+ <p>La lista es {{temas.3}}</p>
+ <p>La lista es {{temas.4}}</p>
+ <p>La lista es {{temas.5}}</p>
+ <p>La lista es {{temas.6}}</p>
+ <p>La lista mostrada por un Bucle For y en lista de HTML:</p>
+ <p>
+    <ul>
+    {% if temas %}
+        {% for el_tema in temas%}
+
+        <li>{{el_tema}}</li>
+
+        {% endfor %}
+    {% else %}
+    <p>No hay elementos que mostrar</p>    
+    {% endif %}
+    </ul>
+ </p>
+ </body>
+ </html>
